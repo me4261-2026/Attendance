@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Faculty Login | Energy Storage Technology (ME4261)</title>
+
+<style>
+/* ---------- PAGE ---------- */
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #2f3a44;   /* NEW BACKGROUND */
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ---------- WRAPPER ---------- */
+.wrapper {
+  width: 100%;
+  padding-top: 90px;
+  text-align: center;
+}
+
+/* ---------- LOGIN CARD ---------- */
+.login-card {
+  width: 440px;
+  margin: auto;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+  overflow: hidden;
+}
+
+/* ---------- HEADER ---------- */
+.login-header {
+  background: #0b3c5d;
+  color: #ffffff;
+  padding: 26px;
+  font-size: 27px;
+  font-weight: bold;
+  letter-spacing: 0.6px;
+}
+
+/* ---------- BODY ---------- */
+.login-body {
+  padding: 40px 36px 34px;
+}
+
+.course-title {
+  font-size: 25px;
+  font-weight: bold;
+  color: #1e2f38;
+  margin-bottom: 6px;
+}
+
+.course-code {
+  font-size: 18px;
+  font-weight: bold;
+  color: #607d8b;
+  margin-bottom: 32px;
+}
+
+/* ---------- INPUT ---------- */
+input {
+  width: 90%;
+  padding: 15px;
+  font-size: 16.5px;
+  border-radius: 9px;
+  border: 2px solid #f57c00;
+  outline: none;
+}
+
+input:focus {
+  border-color: #ef6c00;
+}
+
+/* ---------- BUTTON ---------- */
+button {
+  width: 90%;
+  margin-top: 24px;
+  padding: 15px;
+  font-size: 17.5px;
+  font-weight: bold;
+  background: #1b7f79;
+  color: white;
+  border: none;
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #166d67;
+}
+
+/* ---------- MESSAGE ---------- */
+.msg {
+  margin-top: 18px;
+  font-size: 14.5px;
+  color: #d32f2f;
+  min-height: 18px;
+}
+
+/* ---------- FOOTER ---------- */
+.login-footer {
+  background: #f3f6f9;
+  border-top: 1px solid #d0d7de;
+  padding: 16px 10px;
+}
+
+.login-footer strong {
+  font-size: 13.5px;
+  color: #0b3c5d;
+}
+
+.login-footer span {
+  display: block;
+  font-size: 12px;
+  color: #546e7a;
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+  <div class="login-card">
+
+    <div class="login-header">
+      Faculty Login - Attendance
+    </div>
+
+    <div class="login-body">
+      <div class="course-title"> Energy Storage Technology </div>
+      <div class="course-code">(ME4261)</div>
+
+      <input type="password" id="pwd" placeholder="Enter password">
+      <br>
+      <button onclick="login()">Login</button>
+
+      <div class="msg" id="msg"></div>
+    </div>
+
+    <div class="login-footer">
+      <strong>Developed by Dr. Rajesh Akula</strong>
+      <span>© 2026 · IIEST Shibpur</span>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+const PASSWORD = "Mukesh-Raj";
+
+function login() {
+  var pwd = document.getElementById("pwd").value;
+  if (pwd === PASSWORD) {
+    sessionStorage.setItem("loggedIn", "yes");
+    window.location.href = "attendance.html";
+  } else {
+    document.getElementById("msg").innerHTML = "Invalid password";
+  }
+}
+</script>
+
+</body>
+</html>
